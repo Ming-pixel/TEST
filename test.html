@@ -10,4 +10,29 @@
     <body>
         Hello World!
     </body>
+ 
+   <script>
+     var romanToInt = function(s) {
+     let map = new Map([['I', 1],['V',5],['X',10],['L', 50], ['C', 100], ['D', 500], ['M', 1000]]);
+     let sum = map.get(s[s.length-1]);
+     let pre = map.get(s[s.length-1]);
+     for (let i = s.length-2; i>=0; i--){
+          let curr_num = map.get(s[i]);
+          if (pre > curr_num){
+              sum -= curr_num;
+          }else{
+              sum += curr_num;
+          }
+          pre = curr_num;
+         }
+         return sum;
+     };
+   </script>
+ 
+   <script>
+       function changetext(id)
+       {
+           id.innerHTML="Ooops!";
+       }
+   </script>
 </html>
